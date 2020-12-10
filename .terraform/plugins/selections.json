@@ -1,0 +1,6 @@
+{
+  "registry.terraform.io/ibm-cloud/ibm": {
+    "hash": "h1:LbXHAh2QRRmiOXqUreVS0XhRAIlJeTOPqC8+0qyAnpo=",
+    "version": "1.13.1"
+  }
+}
