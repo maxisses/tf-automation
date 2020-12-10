@@ -1,2 +1,4 @@
 infrastructure-staging-master
-terraform-state
+.terraform
+terraform.tfstate
+tfplan

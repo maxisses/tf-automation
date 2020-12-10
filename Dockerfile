@@ -13,8 +13,5 @@ COPY . .
 
 ENTRYPOINT [ "/bin/sh", "-c" ]
 
-#  docker run -i -v $PWD:/app \
-#    -e IBMCLOUD_API_KEY="" \
-#    bamf-vms \
-#    "terraform init -input=false && terraform plan -input=false -out=tfplan && terraform apply -input=false tfplan"
+# docker run -i -v $PWD:/app -e IBMCLOUD_API_KEY="" bamf-vms "terraform init -input=false && terraform plan -input=false -out=tfplan && terraform apply -input=false tfplan"
 
