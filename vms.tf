@@ -11,6 +11,12 @@
     notes = "This is for testing infra for bamf training"
 } */
 
+resource "ibm_compute_ssh_key" "test_ssh_key" {
+    label = "my_ssh"
+    notes = "my_ssh_id"
+    public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCYoKfFMzc5aX0GMQA1CO58FPpj7ftENvu4VNCr2kS2nZvrmGIXuFZOm7/ekcPXkZEVwBCLw79WxrQjMQjo+/dNRmWq4le6tC2GX4gM8xkOcpe4h1dlOJVUEmYlo/gKq3HdeTe/XRcei+5vEdrBirr6JntQa20cDPtPJtvYuUV7OaAlTZHokZY5f8JcGh9YIo4uUDWhcrg5x8FzhFBfcMurAO23+A0vglLPUbZadpFoGdzc1pPiPl+CLxwM1J2Z3KaVEamuvdigJFG+O7h/XjMES+mEkDT+mEkwc2i5hh7+dLkvA1KYsybwxRGRVo9+wqvTXCa34noC2HslTahTN3Jz maxisses@maxisses-dl-k8s"
+}
+
 resource "ibm_compute_vm_instance" "twc_terraform_sample" {
     hostname = "BAMF-VM1"
     domain = "bamf1.bamf.com"
@@ -27,4 +33,5 @@ resource "ibm_compute_vm_instance" "twc_terraform_sample" {
     local_disk = false
     public_vlan_id = 2906692
     private_vlan_id = 2906694
+    ssh_key_ids = [test_ssh_key.id]
 }
